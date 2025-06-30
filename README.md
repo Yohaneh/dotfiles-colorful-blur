@@ -7,3 +7,14 @@ Preview:
 
 https://github.com/user-attachments/assets/e059b4cf-26be-4de4-b0ab-68bfd04d5a36
 
+some dependencies needed AFAIK(i'll add more later)
+kitty
+waybar
+rofi-wayland
+swaync
+udiskie
+nvtop
+btop
+ttf-nerf-fonts-symbols
+ttf-nerf-fonts-symbols-common
+etc...
