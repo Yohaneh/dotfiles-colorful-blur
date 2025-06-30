@@ -1,5 +1,6 @@
 # dotfiles-colorful-blur
 A blurry colorful hyprland dotfile with some specific settings made for my setup(expect some problems)
+Some dependencies on the end!!!
 
 Preview:
 ![image](https://github.com/user-attachments/assets/11aa5a76-058c-46f0-ac84-56c5811149b1)
