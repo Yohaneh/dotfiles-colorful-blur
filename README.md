@@ -15,6 +15,7 @@ swaync
 udiskie
 nvtop
 btop
+papirus-icon-theme
 ttf-nerf-fonts-symbols
 ttf-nerf-fonts-symbols-common
 etc...
