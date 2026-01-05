@@ -1,0 +1,619 @@
+* {
+  font-family: Material Design Icons, JetBrainsMono Nerd Font, Iosevka Nerd Font;
+  font-size: 15px;
+}
+
+window#waybar {
+  background: transparent;
+	transition-property: background-color;
+	transition-duration: .5s;
+	border-radius: 30px 30px 30px 30px;
+}
+
+window#waybar.hidden {
+}
+
+#window {
+  color: #81A1C1;
+}
+.modules-left {
+    padding:0px;
+    margin:10px 0px 5px 10px;
+    border-radius:55px;
+    background: rgba(17, 17, 27, 0.4);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+.modules-center {
+    padding: 0px;
+    margin:10px 0px 5px 0px;
+    border-radius:55px;
+    background: rgba(17, 17, 27, 0.4);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+.modules-right {
+    padding: 0px;
+    margin: 10px 10px 5px 0px;
+    border-radius:55px;
+    background: rgba(17, 17, 27, 0.4);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+
+#custom-menumic,
+#custom-menu,
+#custom-cava,
+#custom-notification,
+#custom-player,
+#custom-updates,
+#custom-ibus,
+#clock,
+#cpu,
+#memory,
+#temperature,
+#custom-gpu-power,
+#custom-cpu-power,
+#language,
+#custom-media,
+#tray,
+#mode,
+#custom-lock,
+#workspaces,
+#custom-powermenu,
+#taskbar,
+#backlight
+
+#taskbar {
+  border-radius: 8px 8px 8px 8px;
+  border: none;
+	background: none;
+	box-shadow: none;
+}
+#custom-notification {
+  border-radius: 8px 8px 8px 8px;
+  border: none;
+	background: none;
+	box-shadow: none;
+}
+#taskbar button {
+  border-radius: 8px 8px 8px 8px;
+  border: none;
+	background: none;
+	box-shadow: none;
+}
+#taskbar button:hover {
+  border-radius: 8px 8px 8px 8px;
+  border: transparent;
+	background: transparent;
+	box-shadow: none;
+}
+#temperature.cpu {
+  color: #fa9f8e;
+  border-radius: 8px 8px 8px 8px;
+  padding: 0px;
+}
+#custom-gpu-power {
+  color: #85ccff;
+  border-radius: 8px 8px 8px 8px;
+  padding: 0px;
+}
+#custom-cpu-power {
+  color: #85ccff;
+  border-radius: 8px 8px 8px 8px;
+  padding: 0px;
+}
+#temperature.gpu {
+  color: #ff7c54;
+  border-radius: 8px 8px 8px 8px;
+  padding: 0px;
+  margin-right: -4px;
+}
+#custom-player {
+  color: #98E2E5;
+  border-radius: 8px 8px 8px 8px;
+}
+#cpu {
+  color: #7ab6f2;
+  border-radius: 8px 8px 8px 8px;
+}
+
+#memory {
+  color: #b9fac2;
+  border-radius: 8px 8px 8px 8px;
+  padding: 0px;
+}
+
+#workspaces {
+    padding: 0px 5px;
+}
+#workspaces button {
+    all:unset;
+    padding: 0px 5px;
+    color: #425e7a;
+    transition: all .2s ease;
+}
+#workspaces button:hover {
+    color: #4a759e;
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+#workspaces button.active {
+    color: #57a1eb;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#workspaces button.empty {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+#workspaces button.empty:hover {
+    color: #4a759e;
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+#workspaces button.empty.active {
+    color: #57a1eb;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#workspaces button.visible {
+    color: #57a1eb;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#custom-launcher {
+  margin-left: 0px;
+  margin-right: 6.5px;
+
+  padding-right: 0px;
+  padding-left: 0px;
+
+  font-size: 20px;
+
+  color: #7a95c9;
+
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 8px 8px 8px 8px;
+}
+
+#custom-menumic,
+#custom-menu#vol,
+#custom-menu,
+#custom-cava,
+#custom-notification,
+#custom-player,
+#custom-updates,
+#workspaces,
+#custom-ibus,
+#clock,
+#cpu,
+#temperature,
+#custom-gpu-power,
+#custom-cpu-power,
+#language,
+#battery,
+#backlight,
+#pulseaudio,
+#tray,
+#network,
+#bluetooth,
+#taskbar
+{
+  
+  padding: 0em 2em;
+
+  font-size: 15px;
+
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 6px;
+
+  font-size: 13px;
+}
+
+#taskbar {
+  border-radius: 8px 8px 8px 8px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 3px;
+}
+#custom-cava {
+  color: #61afc7;
+  border-radius: 12px;
+}
+#custom-menu {
+  color: #61afc7;
+  border-radius: 12px;
+  margin-left: -8px;
+  font-size: 15px;
+}
+#workspaces {
+  padding-right: 6px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px 8px 8px 8px;
+}
+#backlight {
+  color: #6194c7;
+  padding-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-size: 18px;
+  border-radius: 8px 8px 8px 8px;
+  margin-left: 0px;
+}
+#custom-notification {
+  padding-right: 10px;
+  padding-left: 0px;
+  color: rgba(0, 255, 205, 0.7);
+  font-size: 17px;
+}
+#language {
+  color: #6194c7;
+  border-radius: 8px 8px 8px 8px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  margin-left: 6px;
+  background-color: rgba(17, 17, 27, 0);
+}
+#custom-launcher {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: rgba(17, 17, 27, 0);
+}
+#custom-powermenu {
+  color: #e78284;
+  margin-right: 12px;
+  border-radius: 50px 50px 50px 50px;
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: 17px;
+} 
+#bluetooth {
+  color: #6194c7;
+  padding-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 0px;
+  font-size: 18px;
+  border-radius: 0px 0px 0px 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#pulseaudio {
+  color: rgba(180, 190, 254, 0.8);
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+  font-size: 20px;
+  border-radius: 8px 0px 0px 8px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: rgba(17, 17, 27, 0);
+}
+
+#pulseaudio.muted {
+  color: rgba(116, 199, 236, 0.8);
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+  font-size: 20px;
+  border-radius: 8px 0px 0px 8px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: rgba(17, 17, 27, 0);
+}
+
+#backlight {
+  color: #6194c7;
+  padding-right: 15px;
+  padding-left: 12px;
+  font-size: 21.2px;
+  border-radius: 8px 0px 0px 8px;
+  margin-right: -2px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: rgba(17, 17, 27, 0);
+}
+
+#custom-updates {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 16.5px;
+  color: #00bfe4;
+}
+
+#network {
+  color: #5E81AC;
+  border-radius: 0px 8px 8px 0px;
+  padding-left: 10px;
+  padding-right: 2px;
+  font-size: 18px;
+  margin-right: 7px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: rgba(17, 17, 27, 0);
+}
+
+#network.disconnected {
+  color: #fb958b;
+  border-radius: 0px 8px 8px 0px;
+  padding-left: 10px;
+  padding-right: 2px;
+  font-size: 18px;
+  margin-right: 7px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#battery {
+  color: #8fbcbb;
+  border-radius: 0px 8px 8px 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  font-size: 22px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#battery.critical,
+#battery.warning,
+#battery.full,
+#battery.plugged {
+  color: #8fbcbb;
+  padding-left: 6px;
+  padding-right: 12px;
+  font-size: 22px;
+}
+
+#battery.charging { 
+  font-size: 18px;
+  padding-right: 13px;
+  padding-left: 4px;
+}
+
+#battery.full,
+#battery.plugged {
+  font-size: 22.5px;
+  padding-right: 10px;
+}
+
+@keyframes blink {
+  to {
+    background-color: rgba(30, 34, 42, 0.5);
+    color: #abb2bf;
+  }
+}
+
+#battery.warning {
+  color: #ecd3a0;
+}
+
+#battery.critical:not(.charging) {
+  color: #fb958b;
+}
+
+#custom-lock {
+  color: #ecd3a0;
+  padding: 0 15px 0 15px;
+  margin-left: 7px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#clock {
+  color: #98E2E5;
+  font-family: "Material Design Icons", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0px;
+  padding: 0px;
+  margin-right: 6px;
+  margin-bottom: 0px;
+  border-radius: 8px 8px 8px 8px;
+  padding-right: 0px;
+}
+
+
+tooltip {
+  font-family: "Material Design Icons", sans-serif;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: rgba(17, 17, 27, 0.4);
+}
+
+tooltip label {
+  font-family: "Material Design Icons", sans-serif;
+  padding: 5px;
+  background-color: rgba(17, 17, 27, 0);
+}
+
+label:focus {
+  background-color: #242933;
+}
+
+#tray {
+  margin-right: 6px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 30px;
+  border-radius: 8px 8px 8px 8px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+  color: rgba(100, 150, 200, 0.7);
+  font-size: 17px;
+  border-radius: 8px 8px 8px 8px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-right: 13px;
+  padding-left: 6px;
+  margin-right: 8px;
+}
+
+#idle_inhibitor.activated {
+  color: rgba(100, 255, 255, 0.7);
+  font-size: 17px;
+  border-radius: 8px 8px 8px 8px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-right: 13px;
+  padding-left: 6px;
+  margin-right: 8px;
+}
+#custom-player {
+  font-family: "Material Design Icons", sans-serif;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-right: 0px;
+  margin-left: -5px;
+  margin-bottom: 0px;
+  font-size:12px
+}
+
+#language,
+#custom-cpu-power,
+#custom-gpu-power,
+#memory,
+#temperature,
+#cpu {
+  font-size: 17px;
+  margin-top: 0px;
+  margin-right: 8px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+#custom-song_name,
+#custom-spotify,
+#custom-next,
+#custom-pre {
+  font-size: 20px;
+  padding-right: 6.5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: bold;
+
+}
+
+#custom-pre {
+  border-radius: 8px 0px 0px 8px;
+  padding-left: 10px;
+}
+
+#custom-next {
+  border-radius: 0px 8px 8px 0px;
+  margin-left: 0px;
+}
+
+#custom-spotify {
+  margin-right: 0px;
+  margin-left: -10px;
+  padding-left: 10px;
+}
+
+#custom-song_name {
+  font-size: 17px;
+  padding-right: 10px;
+  border-radius: 8px 8px 8px 8px;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+#custom-ibus { 
+  font-size: 16px;
+  color: #d1cfcf;
+  font-family: sourcecodepro;
+  font-weight: bold;
+  border-radius: 8px 8px 8px 8px;
+  margin-left: 0px;
+}
+#pulseaudio-slider {
+  padding: 0px 6px;
+  border-radius: 6px;
+  min-height: 4px;
+  margin: 0px 4px;
+}
+#pulseaudio-slider slider {
+    min-height: 4px;
+    min-width: 20px;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 55px;
+    background-image: none;
+    background-color: transparent;
+}
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+#pulseaudio-slider highlight {
+    background-color: transparent;
+    min-width: 10px;
+    border-radius: 3px;
+    background-image: linear-gradient(to bottom right,
+    rgba(180, 190, 254, 0.8),  /* Lavender */
+    rgba(137, 180, 250, 0.8),  /* Blue */
+    rgba(116, 199, 236, 0.8),  /* Sapphire */
+    rgba(145, 215, 227, 0.8)   /* Sky */
+  );
+}
+#pulseaudio.microphone {
+    border-radius: 0px 0px 0px 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 20px;
+}
+#custom-menumic{
+    color: rgba(180, 190, 254, 0.8);
+    border-radius: 0px 0px 0px 0px;
+    margin-right: -4px;
+    margin-left: 4px;
+    padding-left: 10px;
+    padding-right: 0px;
+    font-size: 17px;
+}
+#custom-bar{
+   color: rgba(180, 190, 254, 0.8);
+}
+
+
