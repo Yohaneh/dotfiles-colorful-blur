@@ -1,0 +1,79 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "~/.config/fastfetch/images/hyprland.png",
+        "height": 16,
+        "type": "kitty",
+    },
+    "display": {
+        "separator": " ",
+    },
+    "modules": [
+        "break",
+        {
+            "type": "os",
+            "key": "   OS =>",
+            "keyColor": "blue",
+        },
+        {
+            "type": "kernel",
+            "key": "   Kernel =>",
+            "keyColor": "blue",
+        },
+        {
+            "type": "packages",
+            "format": "{} (pacman)",
+            "key": "  󰮯 Packages =>",
+            "keyColor": "yellow",
+        },
+        {
+            "type": "wm",
+            "key": "   WM =>",
+            "keyColor": "cyan",
+        },
+        {
+            "type": "shell",
+            "key": "   Shell =>",
+            "keyColor": "green",
+        },
+        {
+            "type": "terminal",
+            "key": "  󰄛 Terminal =>",
+            "keyColor": "green",
+        },
+        {
+            "type": "cpu",
+            "format": "{1}",
+            "key": "   CPU =>",
+            "keyColor": "blue",
+        },
+        {
+            "type": "gpu",
+            "format": "{2}",
+            "key": "  󰍹 GPU =>",
+            "keyColor": "blue",
+        },
+        {
+            "type": "memory",
+            "key": "   Memory =>",
+            "keyColor": "red",
+        },
+        {
+            "type": "command",
+            "key": "   OS Age =>",
+            "keyColor": "magenta",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days",
+        },
+        {
+            "type": "uptime",
+            "key": "  󰥔 Uptime =>",
+            "keyColor": "magenta",
+        },
+        "break",
+        {
+            "type": "colors",
+            "paddingLeft": 2,
+            "symbol": "circle",
+        },
+    ],
+}
