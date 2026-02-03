@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/f11c090c-84ed-4df2-907b-ee5e73ba9444
 
 
 
-some dependencies needed AFAIK(i'll add more later)
+# some dependencies needed AFAIK(i'll add more later)
 clipse
 hyprexpo (from hyprland official plugins)
 hyprfreeze (try disabling it on hyprland.conf if you dont need this function
