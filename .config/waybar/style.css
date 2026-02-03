@@ -1,6 +1,11 @@
+@import url("colors.css");
+
 * {
   font-family: Material Design Icons, JetBrainsMono Nerd Font, Iosevka Nerd Font;
-  font-size: 15px;
+  font-size: 14px;
+  border-radius: 21px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0);
+  border: none;
 }
 
 window#waybar {
@@ -8,6 +13,7 @@ window#waybar {
 	transition-property: background-color;
 	transition-duration: .5s;
 	border-radius: 30px 30px 30px 30px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, .6);
 }
 
 window#waybar.hidden {
@@ -18,31 +24,35 @@ window#waybar.hidden {
 }
 .modules-left {
     padding:0px;
-    margin:10px 0px 5px 10px;
+    margin: 0px 0px 0px 10px;
     border-radius:55px;
     background: rgba(17, 17, 27, 0.4);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
+    border: 1.5px solid @accent_color;
 }
 .modules-center {
     padding: 0px;
-    margin:10px 0px 5px 0px;
+    margin:0px 0px 0px 0px;
     border-radius:55px;
     background: rgba(17, 17, 27, 0.4);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
+    border: 1.5px solid @accent_color;
 }
 .modules-right {
     padding: 0px;
-    margin: 10px 10px 5px 0px;
+    margin: 0px 10px 0px 0px;
     border-radius:55px;
     background: rgba(17, 17, 27, 0.4);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
+    border: 1.5px solid @accent_color;
 }
 
+#custom-recorder,
 #custom-menumic,
 #custom-menu,
 #custom-cava,
 #custom-notification,
-#custom-player,
+#mpris,
 #custom-updates,
 #custom-ibus,
 #clock,
@@ -86,28 +96,28 @@ window#waybar.hidden {
 	box-shadow: none;
 }
 #temperature.cpu {
-  color: #fa9f8e;
+  color: @accent_color;
   border-radius: 8px 8px 8px 8px;
   padding: 0px;
 }
 #custom-gpu-power {
-  color: #85ccff;
+  color: @accent_color;
   border-radius: 8px 8px 8px 8px;
   padding: 0px;
 }
 #custom-cpu-power {
-  color: #85ccff;
+  color: @accent_color;
   border-radius: 8px 8px 8px 8px;
   padding: 0px;
 }
 #temperature.gpu {
-  color: #ff7c54;
+  color: @accent_color;
   border-radius: 8px 8px 8px 8px;
   padding: 0px;
-  margin-right: -4px;
+  margin-right: 0px;
 }
-#custom-player {
-  color: #98E2E5;
+#mpris {
+  color: @accent_color;
   border-radius: 8px 8px 8px 8px;
 }
 #cpu {
@@ -115,11 +125,12 @@ window#waybar.hidden {
   border-radius: 8px 8px 8px 8px;
 }
 
-#memory {
-  color: #b9fac2;
+#memory,#disk {
+  color: @accent_color;
   border-radius: 8px 8px 8px 8px;
   padding: 0px;
 }
+
 
 #workspaces {
     padding: 0px 5px;
@@ -127,17 +138,17 @@ window#waybar.hidden {
 #workspaces button {
     all:unset;
     padding: 0px 5px;
-    color: #425e7a;
+    color: alpha(@accent_color, 0.4);;
     transition: all .2s ease;
 }
 #workspaces button:hover {
-    color: #4a759e;
+    color: @accent_color;
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
     transition: all 1s ease;
 }
 #workspaces button.active {
-    color: #57a1eb;
+    color: @accent_color;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
@@ -147,18 +158,18 @@ window#waybar.hidden {
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
 }
 #workspaces button.empty:hover {
-    color: #4a759e;
+    color: @accent_color;
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
     transition: all 1s ease;
 }
 #workspaces button.empty.active {
-    color: #57a1eb;
+    color: @accent_color;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 #workspaces button.visible {
-    color: #57a1eb;
+    color: @accent_color;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
@@ -171,25 +182,28 @@ window#waybar.hidden {
 
   font-size: 20px;
 
-  color: #7a95c9;
+  color: @accent_color;
 
   margin-top: 0px;
   margin-bottom: 0px;
   border-radius: 8px 8px 8px 8px;
 }
 
+#custom-recorder,
 #custom-menumic,
 #custom-menu#vol,
 #custom-menu,
 #custom-cava,
 #custom-notification,
-#custom-player,
+#mpris,
 #custom-updates,
 #workspaces,
 #custom-ibus,
 #clock,
 #cpu,
 #temperature,
+#memory,
+#disk,
 #custom-gpu-power,
 #custom-cpu-power,
 #language,
@@ -226,23 +240,24 @@ window#waybar.hidden {
   padding: 3px;
 }
 #custom-cava {
-  color: #61afc7;
+  color: @cava_1;
   border-radius: 12px;
 }
 #custom-menu {
-  color: #61afc7;
+  color: @accent_color;
   border-radius: 12px;
   margin-left: -8px;
+  margin-right: 0px;
   font-size: 15px;
 }
 #workspaces {
   padding-right: 6px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   border-radius: 8px 8px 8px 8px;
 }
 #backlight {
-  color: #6194c7;
+  color: @accent_color;
   padding-left: 10px;
   margin-right: 10px;
   margin-bottom: 0px;
@@ -252,13 +267,13 @@ window#waybar.hidden {
   margin-left: 0px;
 }
 #custom-notification {
-  padding-right: 10px;
+  padding-right: 8px;
   padding-left: 0px;
-  color: rgba(0, 255, 205, 0.7);
+  color: @accent_color;
   font-size: 17px;
 }
 #language {
-  color: #6194c7;
+  color: @accent_color;
   border-radius: 8px 8px 8px 8px;
   padding-left: 0px;
   padding-right: 0px;
@@ -268,7 +283,7 @@ window#waybar.hidden {
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 16px;
-  margin-left: 6px;
+  margin-left: 0px;
   background-color: rgba(17, 17, 27, 0);
 }
 #custom-launcher {
@@ -301,11 +316,11 @@ window#waybar.hidden {
   margin-bottom: 0px;
 }
 #pulseaudio {
-  color: rgba(180, 190, 254, 0.8);
-  padding-left: 0px;
+  color: alpha(@accent_color, 0.9);
+  padding-left: 6px;
   padding-right: 0px;
   margin-right: 0px;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 8px 0px 0px 8px;
   margin-left: 0px;
   margin-top: 0px;
@@ -314,11 +329,11 @@ window#waybar.hidden {
 }
 
 #pulseaudio.muted {
-  color: rgba(116, 199, 236, 0.8);
-  padding-left: 0px;
+  color: rgba(200, 0, 0, 0.8);
+  padding-left: 6px;
   padding-right: 0px;
   margin-right: 0px;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 8px 0px 0px 8px;
   margin-left: 0px;
   margin-top: 0px;
@@ -327,7 +342,7 @@ window#waybar.hidden {
 }
 
 #backlight {
-  color: #6194c7;
+  color: @accent_color;
   padding-right: 15px;
   padding-left: 12px;
   font-size: 21.2px;
@@ -346,7 +361,7 @@ window#waybar.hidden {
 }
 
 #network {
-  color: #5E81AC;
+  color: @accent_color;
   border-radius: 0px 8px 8px 0px;
   padding-left: 10px;
   padding-right: 2px;
@@ -408,6 +423,19 @@ window#waybar.hidden {
     color: #abb2bf;
   }
 }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes gradient-fill {
+    2% { background-image: linear-gradient(125deg, rgba(0, 0, 0, 0.75) 0%, transparent 2%); }
+    100% { background-image: linear-gradient(125deg, rgba(0, 0, 0, 0.75) 100%, transparent 100%); }
+}
 
 #battery.warning {
   color: #ecd3a0;
@@ -426,7 +454,7 @@ window#waybar.hidden {
 }
 
 #clock {
-  color: #98E2E5;
+  color: @accent_color;
   font-family: "Material Design Icons", sans-serif;
   font-size: 18px;
   font-weight: bold;
@@ -441,9 +469,13 @@ window#waybar.hidden {
 
 tooltip {
   font-family: "Material Design Icons", sans-serif;
-  border-radius: 8px;
-  padding: 15px;
-  background-color: rgba(17, 17, 27, 0.4);
+  background-color: alpha(@accent_color, 0.4);
+  border-radius: 21px;
+  animation-name: gradient-fill;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(26);
 }
 
 tooltip label {
@@ -456,121 +488,131 @@ label:focus {
   background-color: #242933;
 }
 
+menubar, menubutton, .popup, menu, menuitem {
+    border: none;
+    box-shadow: none;
+} 
+
 #tray {
-  margin-right: 6px;
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 30px;
-  border-radius: 8px 8px 8px 8px;
+    margin: 0px 0px 0px 8px;
+    font-size: 14px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Este seletor é o culpado. Vamos forçar transparência nele */
+#tray menu decoration {
+    box-shadow: none;
+    background-color: transparent;
+    border-radius: 21px;
+    border: none;
+}
+
+#tray menu {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px; /* Dê um respiro para a borda não colar no conteúdo */
+    padding-bottom: 10px;
+    background: alpha(@main_bg_color, 0.95);;
+    border: 2px solid @accent_color;
+    border-radius: 21px; /* Seu raio personalizado */
+    
+    /* Garante que a borda preta do sistema não apareça */
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5); 
+    
+    animation-name: fadeIn;
+    animation-duration: 350ms;
+    animation-timing-function: ease;
+}
+
+#tray menu separator {
+    margin: 4px 8px;
+    border: 2px solid @accent_color; /* Mudei para border-bottom para ser um separador real */
+    border-radius: 21px; /* Separadores geralmente são linhas retas ou levemente arredondadas */
+}
+
+#tray menu menuitem {
+    padding: 6px 10px;
+    margin: 2px 4px;
+    background: alpha(@accent_color, 0.15); /* Mais sutil, estilo EVO */
+    border-radius: 21px; /* Um pouco menor que o menu para encaixar bem */
+    color: @text_color;
+    border: none; /* Garante sem bordas extras nos itens */
+}
+
+#tray menu menuitem:hover {
+    background: @accent_color;
+    color: @main_bg_color; /* Inverte a cor para contraste estilo PS120 */
+    border-radius: 21px;
+    box-shadow: 0px 0px 8px alpha(@accent_color, 0.4);
 }
 
 #tray > .passive {
-  -gtk-icon-effect: dim;
+    -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: #eb4d4b;
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+    border-radius: 21px;
 }
 
 #idle_inhibitor {
-  color: rgba(100, 150, 200, 0.7);
+  color: alpha(@accent_color, 0.7);;
   font-size: 17px;
   border-radius: 8px 8px 8px 8px;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-right: 13px;
-  padding-left: 6px;
+  padding-left: 2px;
   margin-right: 8px;
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #idle_inhibitor.activated {
-  color: rgba(100, 255, 255, 0.7);
+  color: @text_color;
   font-size: 17px;
   border-radius: 8px 8px 8px 8px;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-right: 13px;
-  padding-left: 6px;
+  padding-left: 2px;
   margin-right: 8px;
 }
-#custom-player {
-  font-family: "Material Design Icons", sans-serif;
+
+#mpris {
   font-weight: bold;
-  margin-top: 2px;
+  margin-top: 0px;
   margin-right: 0px;
   margin-left: -5px;
   margin-bottom: 0px;
-  font-size:12px
+  font-size:13px
 }
 
+#disk,
 #language,
 #custom-cpu-power,
 #custom-gpu-power,
+#temperature.cpu,
+#temperature.gpu,
 #memory,
 #temperature,
 #cpu {
-  font-size: 17px;
+  font-size: 14.5px;
   margin-top: 0px;
-  margin-right: 8px;
+  margin-right: 6px;
   margin-bottom: 0px;
-  padding: 0px;
+  padding: 3px;
 }
 
-#custom-song_name,
-#custom-spotify,
-#custom-next,
-#custom-pre {
-  font-size: 20px;
-  padding-right: 6.5px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-weight: bold;
-
-}
-
-#custom-pre {
-  border-radius: 8px 0px 0px 8px;
-  padding-left: 10px;
-}
-
-#custom-next {
-  border-radius: 0px 8px 8px 0px;
-  margin-left: 0px;
-}
-
-#custom-spotify {
-  margin-right: 0px;
-  margin-left: -10px;
-  padding-left: 10px;
-}
-
-#custom-song_name {
-  font-size: 17px;
-  padding-right: 10px;
-  border-radius: 8px 8px 8px 8px;
-  margin-right: 10px;
-  padding-left: 10px;
-}
-
-#custom-ibus { 
-  font-size: 16px;
-  color: #d1cfcf;
-  font-family: sourcecodepro;
-  font-weight: bold;
-  border-radius: 8px 8px 8px 8px;
-  margin-left: 0px;
-}
 #pulseaudio-slider {
-  padding: 0px 6px;
+  padding: 0px 10px;
   border-radius: 6px;
   min-height: 4px;
   margin: 0px 4px;
 }
 #pulseaudio-slider slider {
     min-height: 4px;
-    min-width: 20px;
+    min-width: 15px;
     background-image: none;
     border: none;
     box-shadow: none;
@@ -580,19 +622,19 @@ label:focus {
 }
 #pulseaudio-slider trough {
     min-height: 10px;
-    min-width: 80px;
+    min-width: 70px;
     border-radius: 5px;
     background-color: transparent;
 }
 #pulseaudio-slider highlight {
     background-color: transparent;
     min-width: 10px;
-    border-radius: 3px;
+    border-radius: 21px;
     background-image: linear-gradient(to bottom right,
-    rgba(180, 190, 254, 0.8),  /* Lavender */
-    rgba(137, 180, 250, 0.8),  /* Blue */
-    rgba(116, 199, 236, 0.8),  /* Sapphire */
-    rgba(145, 215, 227, 0.8)   /* Sky */
+    @accent_color,  /* Lavender */
+    @accent_color,  /* Blue */
+    @accent_color,  /* Sapphire */
+    @accent_color   /* Sky */
   );
 }
 #pulseaudio.microphone {
@@ -604,7 +646,7 @@ label:focus {
     font-size: 20px;
 }
 #custom-menumic{
-    color: rgba(180, 190, 254, 0.8);
+    color: @accent_color;
     border-radius: 0px 0px 0px 0px;
     margin-right: -4px;
     margin-left: 4px;
@@ -614,6 +656,11 @@ label:focus {
 }
 #custom-bar{
    color: rgba(180, 190, 254, 0.8);
+}
+#custom-recorder {
+  font-size: 18px;
+  margin: 0px 10px 0px -10px;
+  color:#c9545d;
 }
 
 

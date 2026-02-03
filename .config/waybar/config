@@ -5,26 +5,27 @@
     "margin-top": 10,
     "margin-left": 10,
     "margin-right": 10,
-    "height": 56,
+    "height": 40,
     "spacing": 0,
     "reload_style_on_change": true,
 
     // --- Layout ---
     "modules-left": [
         "custom/launcher",
-        "custom/player",
+        "mpris",
         "group/expand"
     ],
     "modules-center": [
         "hyprland/workspaces",
-        "custom/cava"
+        "custom/cava",
+        "custom/recorder"
     ],
     "modules-right": [
         "group/expand#2",
-        "group/audio",
         "tray",
         "backlight",
         "battery",
+        "group/audio",
         "custom/notification",
         "clock",
         "custom/powermenu"
@@ -42,49 +43,41 @@
         "modules": [
             "custom/menu",
             "temperature#cpu",
-            "custom/cpu-power",
+            //"custom/cpu-power",
             "temperature#gpu",
-            "custom/gpu-power",
+            //"custom/gpu-power",
+            "memory",
+            "disk",
             "hyprland/language",
             "idle_inhibitor"
         ]
     },
-
-    "group/expand#2": {
-        "orientation": "horizontal",
-        "drawer": {
-            "transition-duration": 600,
-            "children-class": "not-power",
-            "transition-to-left": true,
-            "click-to-reveal": true
-        },
-        "modules": [
-            "custom/menumic",
-            "custom/bar",
-            "pulseaudio#microphone",
-            "pulseaudio/slider#microphone",
-            "pulseaudio"
-        ]
-    },
-
     "group/audio": {
         "orientation": "horizontal",
         "modules": [
+            "pulseaudio",
             "pulseaudio/slider"
         ]
     },
 
     // --- Módulos de Hardware ---
+    "disk": {
+        "interval": 30,
+        "format": " {percentage_used}%",
+        "path": "/",
+        "on-click": "baobab"
+    },
+
     "cpu": {
         "interval": 1,
-        "format": "   {usage}% ",
+        "format": " {usage}% ",
         "max-length": 10,
         "on-click": "kitty -e btop"
     },
 
     "memory": {
         "interval": 3,
-        "format": "  {}% ",
+        "format": " {}%",
         "max-length": 10,
         "on-click": "kitty -e btop"
     },
@@ -94,15 +87,16 @@
         "hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:18.3/hwmon",
         "input-filename": "temp1_input",
         "critical-threshold": 80,
-        "format": "  {temperatureC}°C ",
+        "format": " {temperatureC}°C",
         "on-click": "kitty -e btop"
     },
 
     "custom/cpu-power": {
         "interval": 2,
-        "exec": "awk '{printf \"%.1fW\\n\", $1/1000000}' /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon*/power1_input",
-        "format": "  {} ",
-        "tooltip": false
+        "return-type": "json",
+        "exec": "awk '{p[NR]=$1} END {p1=p[1]/1000000; p2=p[2]/1000000; total=p1+p2; printf \"{\\\"text\\\":\\\"%.1fW\\\", \\\"tooltip\\\":\\\"CPU Core: %.1fW\\\\nSoC: %.1fW\\\"}\\n\", total, p1, p2}' /sys/module/zenpower/drivers/pci:zenpower/0000:00:18.3/hwmon/hwmon3/power2_input /sys/module/zenpower/drivers/pci:zenpower/0000:00:18.3/hwmon/hwmon3/power1_input",
+        "format": "  {}",
+        "tooltip": true
     },
 
     "temperature#gpu": {
@@ -110,7 +104,7 @@
         "hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:03.1/0000:06:00.0/0000:07:00.0/0000:08:00.0/hwmon",
         "input-filename": "temp1_input",
         "critical-threshold": 80,
-        "format": "󰍹  {temperatureC}°C ",
+        "format": "󰍹 {temperatureC}°C",
         "on-click": "kitty -e nvtop"
     },
 
@@ -122,17 +116,24 @@
     },
 
     // --- Áudio e Multimídia ---
+    "custom/recorder": {
+        "format": "",
+        "return-type": "json",
+        "interval": 1,
+        "exec": "echo '{\"class\": \"recording\"}'",
+        "exec-if": "pgrep wf-recorder"
+    },
     "pulseaudio": {
         "format": "{icon}",
         "nospacing": 1,
         "tooltip-format": "Volume : {volume}%",
-        "format-muted": "󰝟 ",
+        "format-muted": "󰓃",
         "format-icons": {
             "headphone": "󱡒 ",
-            "default": ["󰕿 ", "󰖀 ", "󰕾 "]
+            "default": ["󰓃"]
         },
         "on-click": "pamixer -t",
-        "on-click-right": "pavucontrol",
+        "on-click-right": "pwvucontrol",
         "scroll-step": 5
     },
 
@@ -150,7 +151,7 @@
         "min": 0,
         "max": 100,
         "device": "pulseaudio",
-        "scroll-step": 5
+        "scroll-step": 10
     },
 
     "pulseaudio/slider#microphone": {
@@ -182,16 +183,14 @@
         "return-type": "plain"
     },
 
-    "custom/player": {
-        "exec": "/home/jveju/.config/waybar/player.sh",
-        "format": "{}",
-        "max-length": 50,
-        "interval": 1,
-        "return-type": "json",
+    "mpris": {
+        "format": "{artist} - {title}",
+        "tooltip-format" : "{album}",
+        "format-paused": " {artist} - {title}",
         "on-click": "playerctl play-pause",
-        "on-scroll-down": "playerctl previous",
-        "on-scroll-up": "playerctl next",
-        "escape": true
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next",
+        "max-length": 45
     },
 
     // --- Interface e Sistema ---
@@ -221,10 +220,9 @@
 
     "tray": {
         "spacing": 10,
-        "icon-size": 18,
+        "icon-size": 16,
         "show-passive-items": true
     },
-
     "clock": {
         "interval": 60,
         "format": "{:%H:%M} ",
@@ -272,24 +270,27 @@
     "hyprland/language": {
         "format": " {short}"
     },
-
+    
     // --- Custom Elements ---
     "custom/launcher": {
+        "tooltip": false,
         "format": "  ",
         "on-click": "rofi -show drun -theme ~/.config/rofi/launchernovo/themes/pywal-theme-waybar.rasi"
     },
 
     "custom/powermenu": {
+        "tooltip": false,
         "format": "⏻ ",
         "on-click": "~/.config/rofi/powermenu/type-2/powermenu.sh"
     },
 
     "custom/notification": {
+        "tooltip": false,
         "format": "",
         "on-click": "swaync-client -t -sw"
     },
 
-    "custom/menu": { "format": "󰅃", "rotate": 270 },
+    "custom/menu": { "format": "󰅃", "rotate": 270, "tooltip": false},
     "custom/menumic": { "format": "󰓃 " },
     "custom/bar": { "format": "|" }
 }
