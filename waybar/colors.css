@@ -1,0 +1,10 @@
+/* Definições de cores puras - Matugen */
+@define-color main_bg_color #131318;
+@define-color main_border_color #c0c1ff;
+@define-color accent_color #c0c1ff;
+@define-color text_color #e4e1e9;
+@define-color surface_bright_color #39383f;
+
+/* Cores para o CAVA */
+@define-color cava_1 #c0c1ff;
+@define-color cava_2 #c6c4dd;
