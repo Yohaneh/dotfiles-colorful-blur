@@ -55,7 +55,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$suspend\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$lock\n$suspend\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Execute Command
@@ -97,8 +97,8 @@ case ${chosen} in
     $lock)
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
 			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock
+		elif [[ -x '/usr/bin/hyprlock' ]]; then
+			hyprlock
 		fi
         ;;
     $suspend)

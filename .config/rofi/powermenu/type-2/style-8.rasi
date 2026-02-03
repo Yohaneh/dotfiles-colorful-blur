@@ -13,7 +13,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
+@import "~/.config/rofi/colors/matugen-colors.rasi"
 @import                          "shared/fonts.rasi"
 
 /*
@@ -95,15 +95,15 @@ message {
     enabled:                     true;
     margin:                      0px;
     padding:                     15px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               100%;
     border-color:                @selected;
-    background-color:            rgba(40, 43, 49, 1);
+    background-color:            rgba (39,40,34,50%);
     text-color:                  @foreground;
 }
 textbox {
-    background-color:            rgba(40, 43, 49, 0.6);
-    text-color:                  inherit;
+    background-color:            transparent;
+    text-color:                  #FFFFFFFF;
     vertical-align:              0.5;
     horizontal-align:            0.5;
     placeholder-color:           @foreground;
@@ -123,7 +123,7 @@ error-message {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       5;
+    lines:                       4;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -134,11 +134,11 @@ listview {
     
     spacing:                     15px;
     margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
-    border-color:                rgba(120, 120, 120, 0.6);
-    background-color:            transparent;
+    padding:                     8px;
+    border:                      2px solid;
+    border-radius:               100%;
+    border-color:                @selected;
+    background-color:            rgba (39,40,34,50%);
     text-color:                  rgba(120, 120, 120, 0.6);
     cursor:                      "default";
 }
@@ -151,20 +151,23 @@ element {
     padding:                     25px 10px;
     border:                      0px solid;
     border-radius:               100%;
-    border-color:                rgba(120, 120, 120, 0.6);
-    background-color:            @background-alt;
+    border-color:                rgba (39,40,34,50%);
+    background-color:            transparent;
     text-color:                  rgba(120, 120, 120, 0.6);
     cursor:                      pointer;
 }
 element-text {
     font:                        "feather bold 24";
     background-color:            transparent;
-    text-color:                  rgba(120, 120, 120, 1);
+    text-color:                  @active-foreground;
+    border:                      -8px;
+    border-radius:               100%;
+    border-color:                transparent;
     cursor:                      "default";
     vertical-align:              0.5;
     horizontal-align:            0.5;
 }
 element selected.normal {
-    background-color:            rgba(40, 43, 49, 0.6);
-    text-color:                  rgba(120, 120, 120, 0.6);
+    background-color:            @active-background;
+    text-color:                  @foreground;
 }

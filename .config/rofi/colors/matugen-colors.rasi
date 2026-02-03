@@ -1,0 +1,13 @@
+/* Template Matugen para Rofi - Classe PS120EVO */
+* {
+    background: #1a120d;
+    foreground: #f0dfd7;
+    selected:   #ffb68d;
+    active:     #e6beaa;
+    urgent:     #ffb4ab;
+    
+    /* Variáveis compatíveis com seus arquivos rasi */
+    active-background: #6f3813;
+    active-foreground: #ffdbc9;
+    background-alt:    #271e19;
+}
