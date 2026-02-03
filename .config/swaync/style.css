@@ -1,0 +1,232 @@
+/* ==================================================================
+   SwayNC Refined CSS - Matugen PS120EVO (Text & Buttons Only)
+   ================================================================== */
+
+/* ── 1. Palette & Globals (Using @define-color) ──────────────────── */
+
+@import url("colors.css");
+
+/* Variáveis do seu Template Matugen aplicadas estrategicamente */
+@define-color theme_fg_secondary rgba(215, 220, 225, 0.78); 
+@define-color theme_bg rgba(22, 22, 28, 0.22); /* Original Preservado */
+@define-color popup_bg rgba(20, 25, 25, 0.5);  /* Original Preservado */
+@define-color module_bg rgba(20, 20, 20, 0.46); /* Original Preservado */
+@define-color module_hover_bg rgba(210, 215, 225, 0.35); 
+@define-color button_bg @accent; /* Botões com cor Matugen */
+@define-color button_hover_bg @accent; 
+@define-color accent_color @accent; /* Acentos Matugen */
+@define-color accent_color_hover @accent; 
+@define-color border_light transparent; /* Sem bordas */
+@define-color border_dark transparent;  /* Sem bordas */
+@define-color border_medium transparent; /* Sem bordas */
+@define-color icon_primary @theme_fg;
+@define-color icon_secondary @theme_fg_secondary;
+@define-color slider_trough_bg rgba(50, 55, 65, 0.35);
+@define-color slider_thumb_bg white;
+@define-color close_button_bg rgba(110, 110, 115, 0.15);
+@define-color close_button_hover_bg rgba(130, 130, 135, 0.30);
+@define-color mpris_player_bg rgba(0, 0, 0, 0.5);
+
+/* ── Base Reset ───────────────────────────────────────────────────── */
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 17px;
+  color: @theme_fg;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+}
+
+/* ── 2. Control Center Container ─────────────────────────────────── */
+.control-center {
+  background-color: @theme_bg;
+  border: 2px solid @accent;
+  border-radius: 30px;
+  padding: 28px;
+  min-width: 320px;
+}
+
+/* ── 3. Widget Modules ───────────────────────────────────────────── */
+.widget-mpris,
+.widget-volume,
+.widget-dnd,
+.widget-backlight,
+.control-center-list > box > *:not(.widget-title) {
+  background-color: @module_bg;
+  background: none;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 14px;
+  border: none;
+}
+.widget-volume, .widget-backlight { padding: 14px 18px; }
+.control-center > box > *:last-child { margin-bottom: 0; }
+
+/* Widget Titles */
+.widget-title {
+  background: transparent;
+  border: none;
+  padding: 4px 6px 12px 6px;
+  margin-bottom: 8px;
+}
+.widget-title label {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 17px;
+  font-weight: 500;
+  color: @theme_fg;
+  margin-left: 4px;
+  background: none;
+}
+.widget-title button {
+  font-family: inherit;
+  font-size: 16px;
+  color: #ffffff; /* Texto branco para contraste no botão colorido */
+  background-color: @button_bg;
+  border: none;
+  border-radius: 21px;
+  padding: 7px 16px;
+  transition: background-color 0.15s ease;
+}
+.widget-title button:hover,
+.widget-title button:active {
+  filter: brightness(1.2);
+}
+
+/* ── 4. MPRIS Widget ────────────────────────────────────────────── */
+.widget-mpris {
+  padding: 0;
+  border: none;
+  border-radius: 18px;
+  background: transparent;
+}
+.widget-mpris .widget-mpris-player {
+  background-color: @mpris_player_bg;
+  border-radius: 21px;
+  border: none;
+  padding: 16px;
+}
+.widget-mpris .widget-mpris-album-art {
+  background: none;
+  min-width: 60px;
+  min-height: 60px;
+  border-radius: 21px;
+  margin-right: 12px;
+}
+.widget-mpris .widget-mpris-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: @theme_fg;
+  margin-bottom: 4px;
+  background: none;
+}
+.widget-mpris .widget-mpris-subtitle {
+  font-size: 16px;
+  color: @theme_fg_secondary;
+  background: none;
+}
+.widget-mpris .widget-mpris-player button {
+  all: unset;
+  background: transparent;
+  border-radius: 50%;
+  padding: 7px;
+  color: @icon_secondary;
+  font-size: 12px;
+  min-width: 24px;
+  min-height: 34px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.widget-mpris .widget-mpris-player button:hover {
+  background-color: @button_hover_bg;
+  color: white;
+}
+
+/* ── 5. Sliders (Volume, Backlight) ─────────────────────────────── */
+.widget-volume label, .widget-backlight label {
+  font-size: 24px;
+  color: @accent_color;
+  min-width: 24px;
+  margin-right: 14px;
+}
+scale trough {
+  min-height: 12px;
+  border-radius: 6px;
+  background-color: @slider_trough_bg;
+}
+scale trough progress {
+  min-height: 12px;
+  border-radius: 6px;
+  background-color: @accent_color;
+}
+scale slider {
+  min-width: 14px;
+  min-height: 14px;
+  border-radius: 7px;
+  background-color: @slider_thumb_bg;
+}
+
+/* ── 7. Notification Center ─────────────────────────────────────── */
+.control-center .notification-background {
+  background-color: @module_bg;
+  border: none;
+  padding: 16px;
+  border-radius: 18px;
+  border: 2px solid @accent;
+}
+.control-center .notification .summary {
+  font-weight: 600;
+  color: @accent_color;
+  margin-bottom: 5px;
+}
+
+/* ── 8. Floating Notifications ─────────────────────────────────── */
+.floating-notifications .notification-background {
+  background-color: @popup_bg;
+  border: 2px solid @accent;
+  border-radius: 18px;
+  padding: 18px;
+  margin: 8px 14px;
+}
+.floating-notifications .notification .summary {
+  font-weight: 700;
+  color: @accent;
+}
+
+/* ── Do Not Disturb (DND) Widget ─────────────────────────────────── */
+.widget-dnd {
+    margin: 4px 0px;
+    padding: 4px 12px;
+    background: none;
+    border: none;
+}
+
+.widget-dnd > switch {
+    background-color: @module_bg;
+    border: none;
+    border-radius: 14px;
+    min-height: 18px;
+    transition: all 0.2s ease-in-out;
+}
+
+.widget-dnd > switch:checked {
+    background-color: @button_bg;
+}
+
+/* Slider (bolinha de seleção) visível */
+.widget-dnd > switch slider {
+    background-color: white;
+    border-radius: 10px;
+    min-width: 20px;
+    min-height: 20px;
+    margin: 3px;
+}
+
+.widget-dnd > label {
+    font-size: 14px;
+    font-weight: bold;
+    color: @theme_fg;
+}

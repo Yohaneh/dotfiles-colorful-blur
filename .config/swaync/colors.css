@@ -1,0 +1,10 @@
+/* Matugen PS120EVO - SwayNC Template */
+
+@define-color theme_fg #e9e0e7;
+
+/* Para transparência, usamos a função rgba com a cor hex e o valor de alpha */
+@define-color theme_bg rgba(22, 18, 23, 0.8);
+
+@define-color accent #e2b7f4;
+@define-color module_bg #221e24;
+@define-color border_color #978e98;
