@@ -189,6 +189,7 @@ window#waybar.hidden {
   border-radius: 8px 8px 8px 8px;
 }
 
+#custom-pacman,
 #custom-recorder,
 #custom-menumic,
 #custom-menu#vol,
@@ -233,6 +234,14 @@ window#waybar.hidden {
   font-size: 13px;
 }
 
+#custom-pacman {
+  color: @accent_color;
+  border-radius: 12px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  font-size: 15px;
+}
 #taskbar {
   border-radius: 8px 8px 8px 8px;
   margin-top: 0px;
@@ -317,7 +326,7 @@ window#waybar.hidden {
 }
 #pulseaudio {
   color: alpha(@accent_color, 0.9);
-  padding-left: 6px;
+  padding-left: 15px;
   padding-right: 0px;
   margin-right: 0px;
   font-size: 15px;
@@ -330,7 +339,7 @@ window#waybar.hidden {
 
 #pulseaudio.muted {
   color: rgba(200, 0, 0, 0.8);
-  padding-left: 6px;
+  padding-left: 15px;
   padding-right: 0px;
   margin-right: 0px;
   font-size: 15px;
@@ -365,9 +374,9 @@ window#waybar.hidden {
   border-radius: 0px 8px 8px 0px;
   padding-left: 10px;
   padding-right: 2px;
-  font-size: 18px;
-  margin-right: 7px;
-  margin-left: 0px;
+  font-size: 16px;
+  margin-right: 2px;
+  margin-left: 2px;
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: rgba(17, 17, 27, 0);
@@ -378,9 +387,9 @@ window#waybar.hidden {
   border-radius: 0px 8px 8px 0px;
   padding-left: 10px;
   padding-right: 2px;
-  font-size: 18px;
-  margin-right: 7px;
-  margin-left: 0px;
+  font-size: 16px;
+  margin-right: 2px;
+  margin-left: 2px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -455,7 +464,7 @@ window#waybar.hidden {
 
 #clock {
   color: @accent_color;
-  font-family: "Material Design Icons", sans-serif;
+  font-family: "JetBrains Mono Nerd Font", sans-serif;
   font-size: 18px;
   font-weight: bold;
   margin-top: 0px;
@@ -468,7 +477,7 @@ window#waybar.hidden {
 
 
 tooltip {
-  font-family: "Material Design Icons", sans-serif;
+  font-family: "JetBrains Mono Nerd Font", sans-serif;
   background-color: alpha(@accent_color, 0.4);
   border-radius: 21px;
   animation-name: gradient-fill;
@@ -476,10 +485,11 @@ tooltip {
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-timing-function: steps(26);
+  border: 1.5px solid @accent_color;
 }
 
 tooltip label {
-  font-family: "Material Design Icons", sans-serif;
+  font-family: "JetBrains Mono Nerd Font", sans-serif;
   padding: 5px;
   background-color: rgba(17, 17, 27, 0);
 }
@@ -494,7 +504,7 @@ menubar, menubutton, .popup, menu, menuitem {
 } 
 
 #tray {
-    margin: 0px 0px 0px 8px;
+    margin: 0px -8px 0px 6px;
     font-size: 14px;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -590,6 +600,7 @@ menubar, menubutton, .popup, menu, menuitem {
 
 #disk,
 #language,
+#custom-pacman,
 #custom-cpu-power,
 #custom-gpu-power,
 #temperature.cpu,

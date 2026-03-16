@@ -14,6 +14,7 @@
         "custom/launcher",
         "mpris",
         "group/expand"
+        //"wlr/taskbar"
     ],
     "modules-center": [
         "hyprland/workspaces",
@@ -21,8 +22,9 @@
         "custom/recorder"
     ],
     "modules-right": [
-        "group/expand#2",
+        //"group/expand#2",
         "tray",
+        "network",
         "backlight",
         "battery",
         "group/audio",
@@ -162,7 +164,18 @@
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
     },
-
+    "network": {
+        "format": "",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "󰛳",
+        "format-disconnected": "", //An empty format will hide the module.
+        "format-disconnected": "",
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} 󰛳 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
     "custom/cava": {
         "exec": "~/.config/waybar/cava.sh",
         "format": "{}",
@@ -219,9 +232,11 @@
     },
 
     "tray": {
-        "spacing": 10,
         "icon-size": 16,
-        "show-passive-items": true
+        "spacing": 10,
+      "icons": {
+        "blueman": "bluetooth"
+      }
     },
     "clock": {
         "interval": 60,
@@ -239,7 +254,15 @@
             }
         }
     },
-
+    "wlr/taskbar": {
+        "app_ids-mapping": {
+            "vivaldi-stable": "Vivaldi",
+            "electron-app-name": "Custom App"
+        },
+        "format": "{icon} {app_id}",
+        "icon-theme": "/usr/share/icons/Papirus-Dark",
+        "icon-size": 13
+    },
     "battery": {
         "states": { "warning": 30, "critical": 15 },
         "format": "{icon}",
