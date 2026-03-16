@@ -28,3 +28,7 @@ output_path = '~/.config/rofi/colors/matugen-colors.rasi'
 [templates.swaync]
 input_path = '~/.config/matugen/templates/swaync.css'
 output_path = '~/.config/swaync/colors.css'
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/matugen_colors.conf'
+output_path = '~/.config/hypr/matugen_colors.conf'
