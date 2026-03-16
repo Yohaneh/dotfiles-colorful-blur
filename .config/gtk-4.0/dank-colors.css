@@ -2,8 +2,8 @@
  * Template adaptado para adw-gtk3 e libadwaita
  */
 
-@define-color accent_bg_color #e2b7f4;
-@define-color accent_fg_color #432254;
+@define-color accent_bg_color #ffb1c1;
+@define-color accent_fg_color #551d2d;
 
 @define-color destructive_bg_color #ffb4ab;
 @define-color destructive_fg_color #690005;
@@ -11,37 +11,37 @@
 @define-color error_bg_color #ffb4ab;
 @define-color error_fg_color #690005;
 
-@define-color success_bg_color #f5b7b6;
-@define-color success_fg_color #4c2526;
+@define-color success_bg_color #ecbe91;
+@define-color success_fg_color #462a09;
 
 @define-color warning_bg_color #93000a;
 @define-color warning_fg_color #ffdad6;
 
 /* Window e Backgrounds (Surface) */
-@define-color window_bg_color #161217;
-@define-color window_fg_color #e9e0e7;
+@define-color window_bg_color #191113;
+@define-color window_fg_color #efdee0;
 
-@define-color view_bg_color #161217;
-@define-color view_fg_color #e9e0e7;
+@define-color view_bg_color #191113;
+@define-color view_fg_color #efdee0;
 
-@define-color headerbar_bg_color #161217;
-@define-color headerbar_fg_color #e9e0e7;
+@define-color headerbar_bg_color #191113;
+@define-color headerbar_fg_color #efdee0;
 
-@define-color sidebar_bg_color #221e24;
-@define-color sidebar_fg_color #e9e0e7;
+@define-color sidebar_bg_color #261d1f;
+@define-color sidebar_fg_color #efdee0;
 
-@define-color secondary_sidebar_bg_color #1e1a1f;
-@define-color secondary_sidebar_fg_color #e9e0e7;
+@define-color secondary_sidebar_bg_color #22191b;
+@define-color secondary_sidebar_fg_color #efdee0;
 
-@define-color card_bg_color #110d12;
-@define-color card_fg_color #e9e0e7;
+@define-color card_bg_color #140c0e;
+@define-color card_fg_color #efdee0;
 
-@define-color dialog_bg_color #2d282e;
-@define-color dialog_fg_color #e9e0e7;
+@define-color dialog_bg_color #312829;
+@define-color dialog_fg_color #efdee0;
 
-@define-color popover_bg_color #2d282e;
-@define-color popover_fg_color #e9e0e7;
+@define-color popover_bg_color #312829;
+@define-color popover_fg_color #efdee0;
 
 /* Menus e Custom */
-@define-color menu_color #221e24;
-@define-color content_view_bg #161217;
+@define-color menu_color #261d1f;
+@define-color content_view_bg #191113;
