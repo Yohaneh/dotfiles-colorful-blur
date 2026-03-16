@@ -22,5 +22,7 @@ else
     BAR="$BAR_FILLED$BAR_EMPTY"
 fi
 
-notify-send -u low -t 1500 -h string:x-canonical-private-synchronous:volume \
+notify-send -u low -t 1500 \
+    -h string:x-canonical-private-synchronous:volume \
+    -h boolean:transient:true \
     "$ICON $VOLUME% $BAR"
